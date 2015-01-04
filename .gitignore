@@ -1,0 +1,6 @@
+# Created by .gitignore support plugin (hsz.mobi)
+
+test.js
+node_modules
+.idea
+crt/*
