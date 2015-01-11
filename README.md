@@ -53,5 +53,12 @@ Betfair.login(optionsLogin, function (err, betfair) {
     });
   });
 });
+```
 
+## Tests
+run unit tests
+install mocha and dependencies
+and :
+```
+$ npm test
 ```
