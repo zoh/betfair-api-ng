@@ -6,6 +6,7 @@ Contains:
 * Betting API
 * Accounts API
 * Heartbeat API
+* Keep-Alive Request
 
 ## Install
 ```
@@ -27,7 +28,7 @@ Betfair.login({
   // ...
 });
 ```
-How create  [Application Keys](https://api.developer.betfair.com/services/webapps/docs/display/1smk3cen4v3lu3yomq5qye0ni/Application+Keys) 
+How to create  [Application Keys](https://api.developer.betfair.com/services/webapps/docs/display/1smk3cen4v3lu3yomq5qye0ni/Application+Keys) 
 
 ```js
 Betfair.login(optionsLogin, function (err, betfair) {
@@ -52,6 +53,14 @@ Betfair.login(optionsLogin, function (err, betfair) {
       console.log(JSON.stringify(res, null, 4));
     });
   });
+});
+```
+
+You should also implement a [Keep-Alive Request](https://docs.developer.betfair.com/pages/viewpage.action?pageId=3834909#Login&SessionManagement-KeepAlive) and keep an open connection (sessions will close after 24 hours)
+
+```js
+betfair.account.keepAlive(function (err, res) {
+  return console.log((err ? res.error : res.status));
 });
 ```
 
